@@ -15,6 +15,9 @@
   <p>Developed by mwasifanwar, this framework represents a significant advancement in voice biometric technology, offering both API-based integration for developers and user-friendly web interfaces for end-users. The modular architecture allows for seamless deployment across cloud platforms, on-premises infrastructure, and edge computing environments.</p>
 </div>
 
+<img width="702" height="433" alt="image" src="https://github.com/user-attachments/assets/354c588a-abc3-456d-9bac-663cde2c2089" />
+
+
 <div class="architecture">
   <h2>System Architecture & Workflow</h2>
   
@@ -28,6 +31,9 @@
   [Streaming]    [Enhancement]     [Language LSTM]  [Scoring]      [Authentication]
                  [Normalization]   [Spoofing CNN]   [Fusion]       [Analytics]
   </code></pre>
+
+<img width="1465" height="532" alt="image" src="https://github.com/user-attachments/assets/4f8bc39b-4371-4230-a1be-fc89fbe5daae" />
+
   
   <h3>Core Processing Pipeline</h3>
   <ol>
@@ -211,6 +217,9 @@
     <li>Comprehensive logging, monitoring, and performance metrics</li>
   </ul>
 </div>
+
+<img width="670" height="560" alt="image" src="https://github.com/user-attachments/assets/91dd106b-56a0-4c92-9f69-1eb6034d32f9" />
+
 
 <div class="installation">
   <h2>Installation & Setup</h2>
