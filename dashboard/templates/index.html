@@ -1,0 +1,88 @@
+<!-- dashboard/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoicePrint ID - Multi-Speaker Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>VoicePrint ID</h1>
+            <p>Advanced Multi-Speaker Recognition System by mwasifanwar</p>
+        </div>
+
+        <div class="analysis-card">
+            <h2 class="card-title">Audio Analysis</h2>
+            <form id="analysisForm" enctype="multipart/form-data">
+                <div>
+                    <label for="audioFile">Select Audio File:</label>
+                    <input type="file" id="audioFile" name="audio" accept="audio/*" required>
+                </div>
+                
+                <div>
+                    <label for="analysisType">Analysis Type:</label>
+                    <select id="analysisType" name="analysis_type">
+                        <option value="all">Complete Analysis</option>
+                        <option value="speaker">Speaker Only</option>
+                        <option value="emotion">Emotion Only</option>
+                        <option value="language">Language Only</option>
+                        <option value="spoof">Spoof Detection Only</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary">Analyze Audio</button>
+            </form>
+
+            <div id="results" class="result-box" style="display: none;">
+                <h3>Analysis Results</h3>
+                <div id="speakerResult"></div>
+                <div id="emotionResult"></div>
+                <div id="languageResult"></div>
+                <div id="spoofResult"></div>
+            </div>
+        </div>
+
+        <div class="analysis-card">
+            <h2 class="card-title">Speaker Registration</h2>
+            <form id="registrationForm" enctype="multipart/form-data">
+                <div>
+                    <label for="speakerId">Speaker ID:</label>
+                    <input type="text" id="speakerId" name="speaker_id" required>
+                </div>
+                
+                <div>
+                    <label for="registrationFiles">Audio Files (Multiple):</label>
+                    <input type="file" id="registrationFiles" name="audio_files" multiple accept="audio/*" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Register Speaker</button>
+            </form>
+            
+            <div id="registrationResult" class="result-box" style="display: none;"></div>
+        </div>
+
+        <div class="analysis-card">
+            <h2 class="card-title">Real-time Analysis</h2>
+            <button id="startRecording" class="btn-primary">Start Recording</button>
+            <button id="stopRecording" class="btn-primary" disabled>Stop Recording</button>
+            
+            <div class="audio-visualization">
+                <canvas id="waveform" class="waveform"></canvas>
+            </div>
+            
+            <div id="realTimeResults"></div>
+        </div>
+
+        <div class="analysis-card">
+            <h2 class="card-title">System Statistics</h2>
+            <canvas id="statsChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
